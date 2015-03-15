@@ -1,3 +1,9 @@
+#
+# General setup
+#
+CONFIG_LOCALVERSION="_SimpleGX-v3.5.1"
+# CONFIG_LOCALVERSION_AUTO is not set
+
 # CONFIG_ARM_PATCH_PHYS_VIRT is not set
 CONFIG_SYSVIPC=y
 CONFIG_AUDIT=y
