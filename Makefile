@@ -4,6 +4,9 @@ SUBLEVEL = 0
 EXTRAVERSION =
 NAME = Unicycling Gorilla
 
+DEVICE_FLAGS = -marm -mcpu=cortex-a15 -mtune=cortex-a15
+SIMPLEGX_FLAGS = -Ofast
+
 # *DOCUMENTATION*
 # To see a list of typical targets execute "make help"
 # More info can be located in ./README
@@ -379,7 +382,8 @@ LINUXINCLUDE    := \
 
 KBUILD_CPPFLAGS := -D__KERNEL__
 
-KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
+KBUILD_CFLAGS   := $(DEVICE_FLAGS) $(SIMPLEGX_FLAGS) \
+		   -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -fno-strict-aliasing -fno-common \
 		   -Werror-implicit-function-declaration \
 		   -Wno-format-security \
